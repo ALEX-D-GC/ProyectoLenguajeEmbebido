@@ -30,4 +30,4 @@ de referencia de 5V
 
  Donde pin es el número de la terminal analógica a leer (A0 – A5)
 
- 
+![Esta es una imagen de ejemplo](blob:https://web.whatsapp.com/15afc9be-8b9c-4dd0-85a5-7b61749c0759)

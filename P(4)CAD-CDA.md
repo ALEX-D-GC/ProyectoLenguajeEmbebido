@@ -103,6 +103,8 @@ analogWrite(pin, CICLO)
 
 CICLO: 0 a 255.
 
+## Código fade.ino
+
 `int` led = 9;
 
 `int` brightness = 0;
@@ -132,7 +134,118 @@ máximos, se invierte de signo para alcanzar el valor
 opuesto de “brillo”
 
 `delay`(`30`);
+
 }
+
+A continuación se muestra un [Link](https://youtu.be/CK9-RhWYriA "Librerias de Arduino").
+# Control Servos
+
+![Esta es una imagen de ejemplo](https://www.makerelectronico.com/wp-content/uploads/2020/04/tutorial-servomotor-arduino-2.png)
+
+Biblioteca Servo.h
+
+permite manejar 
+de manera simple un servo motor.
+
+Sin embargo requiere una actualización 
+para mejorar la experiencia en el 
+desplazamiento del motor.
+
+> Que es un Servo Motor?
+
+Un servo, es un pequeño motor que 
+puede colocar su eje en una posición 
+deseada y mantener esa posición. 
+Las instrucciones al servomotor son 
+enviadas en forma de señales PWM.
+
+Donde diferentes ciclos de trabajo 
+indican diferentes posiciones la Servo 
+motor
+
+`Servo myservo()`
+
+ Es una librería 
+orientada a objetos, cada servo a 
+controlar debe estar ligado a un 
+objeto del tipo Servo.
+
+Cada objeto es independiente.
+
+Sintaxis:
+
+Servo (ID)
+
+ID: Identificador del Servo.
+
+`myservo.attach()`
+
+La rutina attach() debe ser 
+invocada con un objeto del tipo 
+servo. 
+
+Esta rutina indica en que pin 
+de Galileo se encuentra el servo 
+motor físicamente.
+
+Sintaxis:
+
+myservo.attach(PIN)
+
+PIN: Terminal a la que se 
+encuentra conectado el 
+servomotor.
+
+`myservo.write()`
+
+Por medio de esta función se 
+indica la posición que el servo 
+motor debe de tomar.
+
+Sintaxis:
+
+myservo.write(VALUE)
+
+VALUE: Posición del servo motor
+
+## Código servo.ino
+
+#include <Servo.h>
+>Importar la librería Servo.h
+
+int servoPin = 9;
+
+Servo myServo;
+>Creación de un objeto de la clase Servo. Igual que en programación 
+orientada a objetos
+
+void setup() {
+
+myServo.attach(servoPin);
+
+}
+>Asignar el pin 9 al objeto Servo. Todas las operaciones sobre el objeto 
+‘myservo’ se reflejaran en el pin 9.
+
+void loop() {
+
+myServo.write(19);
+>Envió de señal de control al servo motor para 
+asignar una nueva posición.
+
+delay(1000);
+
+myServo.write(180);
+
+delay(1000);
+
+
+
+
+
+
+
+
 
 
 

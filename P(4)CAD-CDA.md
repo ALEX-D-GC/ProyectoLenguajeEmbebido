@@ -30,4 +30,40 @@ de referencia de 5V
 
  Donde pin es el número de la terminal analógica a leer (A0 – A5)
 
-![Esta es una imagen de ejemplo](blob:https://web.whatsapp.com/15afc9be-8b9c-4dd0-85a5-7b61749c0759)
+ ## Código
+ **AnalogInput.ino**
+
+ `int` sensorPin = A0;
+>Se declara una variable que representará la 
+terminal analógica A0
+
+ `int` ledPin = 13;
+
+ `int` sensorValue = 0;
+ >Variable que recibirá el valor analógico representado por 10 bits.
+
+ `void` setup() {
+
+ pinMode(ledPin, OUTPUT); 
+
+ }
+ >La terminal 13 se configura como salida.
+
+ `void` loop() {
+
+ sensorValue = analogRead(sensorPin);
+ >Lectura de la terminal Analógica A0.
+
+ digitalWrite(ledPin, HIGH);
+ >Se cambia el estado del pin de salida enttre AlTO Y BAJO.
+
+ delay(sensorValue);
+
+ digitalWrite(ledPin, LOW);
+ >Se cambia el estado del pin de salida enttre AlTO Y BAJO.
+
+ delay(sensorValue);
+ }
+
+
+

@@ -26,7 +26,7 @@ de referencia de 5V
 
 
  Sintaxis:  
- `analogRead()`.
+ `analogRead()`
 
  Donde pin es el número de la terminal analógica a leer (A0 – A5)
 
@@ -64,6 +64,76 @@ terminal analógica A0
 
  delay(sensorValue);
  }
+
+ # Salidas Análogas 
+
+ ![Esta es una imagen de ejemplo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBN2FR6R3LisN1mM7kIudaN7F4s_ngwB19sw&usqp=CAU)
+
+ Se puede generar salidas análogas 
+ tan pronto como sale de su caja, y no requiere hardware extra.
+
+ Las salidas análogas son 
+ generadas por medio de señales 
+ PWM
+
+_No todas las terminales de Arduino son capaces de generar una salida 
+análoga, solo aquellos que están marcados con una tilde (~) junta a su 
+identificador de terminal, son capaces de generar este tipo de señal._
+
+`analogWrire()`
+
+![Esta es una imagen de ejemplo](https://educaendigital.com/wp-content/uploads/2020/02/Captura-de-pantalla-2020-02-03-a-las-6.33.23.png)
+
+La llamada a esta rutina indica a
+una terminal de salida que debe de
+generar una señal PWM de manera
+continua con el ciclo de trabajo
+indicado.
+
+La señal PWM genera con esta
+rutina se mantiene de manera
+continua en la terminal de salida
+hasta que se escribe un nuevo
+`analogWrire()` a la misma terminal, o se ejecuta un 
+`analogWrire()` o `digitalRead()`.
+
+Sintaxis:
+
+analogWrite(pin, CICLO)
+
+CICLO: 0 a 255.
+
+`int` led = 9;
+
+`int` brightness = 0;
+
+`int` fadeAmount = 5;
+
+`void setup`() {
+
+`pinMode`(led,`OUTPUT`);
+
+}
+
+>`OUTPUT` Terminal 9 toma el rol de salida 
+
+`void loop`() {
+
+`analogWrite`(led, brightness);
+brightness = brightness + fadeAmount;
+>Escribir la cantidad de “brillo” que queremos obtener del led. En 
+este casa el 100% de ciclo de trabajo esta representado por 
+255.
+
+`if` (brightness == 0 || brightness == 255)
+fadeAmount = -fadeAmount;
+>Una vez que se alcanza alguno de los valores 
+máximos, se invierte de signo para alcanzar el valor 
+opuesto de “brillo”
+
+`delay`(`30`);
+}
+
 
 
 

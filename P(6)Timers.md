@@ -2,7 +2,7 @@
 
 ![Esta es una imagen de ejemplo](https://e7.pngegg.com/pngimages/1003/379/png-clipart-computer-icons-time-attendance-clocks-symbol-xuandong-life-miscellaneous-text.png)
 
->Esta biblioteca es un conjunto de rutinas para configurar el temporizador de hadware de 16 bits llamado timer1 en el ATmega168/328
+>Esta biblioteca es un conjunto de rutinas para configurar el temporizador de hardware de 16 bits llamado timer1 en el ATmega168/328
 
 Teóricamente podríamos fijar una interrupción cada 1/16000000 segundos, lo que no sería muy útil porque cada instrucción de Arduino necesita varios pulsos de reloj para ejecutarse (y algunos muchos pulsos).
 
